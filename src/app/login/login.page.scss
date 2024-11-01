@@ -1,11 +1,12 @@
 /* Estilos para la caja de login */
 .login-container {
-    display: flex;
+    display: flex;  
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     padding: 20px;
-    background-image: url('/src/assets/img/moon_bg.png'); /* Ruta de la imagen */
+    background-image: url('../../assets/img/moon_bg.png'); /* Ruta de img */
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -59,4 +60,32 @@
     color: white;
     font-size: 24px;
   }
+  /* Estilos para el logo */
+  .logo-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 120px; /* Tamaño máximo */
+    height: auto;
+    animation: slidein 3s linear 1s infinite alternate;
+}
+
+/* Animación detalles */
+@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+    
+
+    
+
+
   
