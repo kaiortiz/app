@@ -65,4 +65,7 @@ export class LoginPage implements OnInit {
       }
     });
   }
+  registro() { 
+    this.navCtrl.navigateForward(['/registro']);
+  }
 }

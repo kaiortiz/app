@@ -18,16 +18,16 @@
   .logo {
     width: 120px;
     height: auto;
-    animation: slidein 3s linear 1s infinite alternate;
+    animation: zoomIn 3s ease-in-out infinite alternate;
   }
   
   /* Animación del logo */
-  @keyframes slidein {
+  @keyframes zoomIn {
     from {
-      transform: translateX(-100%);
+      transform: scale(1);
     }
     to {
-      transform: translateX(0);
+      transform: scale(0.5);
     }
   }
   

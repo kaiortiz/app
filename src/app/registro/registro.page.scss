@@ -1,0 +1,37 @@
+/* Estilo container registro */
+.registro-card{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Estilo para los items (ion-item) */
+ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo para el ion-label dentro de los items */
+  ion-label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Estilo para los inputs de Angular Material */
+  mat-form-field {
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  /* Estilo para el botón de guardar */
+  ion-button {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #fff;
+    --background: #494949; 
+    --background-hover: #363636; 
+  }

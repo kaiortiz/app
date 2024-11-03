@@ -35,6 +35,8 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 
 @font-face {
     font-family: 'Gotham Narrow';
@@ -42,6 +44,17 @@
 
 }
 
+ion-header {
+    --background: transparent;
+    --ion-toolbar-background: transparent;
+    --ion-toolbar-border-color: transparent;
+
+}
+
+ion-header, 
+ion-toolbar {
+    color:#1d1d1d;
+}
 body {
     font-family: 'Gotham Narrow', sans-serif;
 
@@ -49,3 +62,4 @@ body {
     margin: 0cm;
     color: #1d1d1d;
   }
+

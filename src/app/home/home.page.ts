@@ -6,17 +6,22 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
+
   email: string = '';
+  password: string = '';
+  bienvenidos: string='Bienvenid@';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, ) {}
 
-  ngOnInet() {
-    // obtener parámetros de URL
-      this.route.queryParams.subscribe(params => {
-        this.email = params['email'];
-      });
+
+  ngOnInit() { 
+    // Obtener los parámetros de la URL
+    this.route.queryParams.subscribe(params => {
+      this.email = params['email'];
+      this.password = params['password'];
+    });
   }
-
 }
