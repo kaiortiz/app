@@ -35,3 +35,17 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('../../app_s1/src/assets/fonts/GothamNarrow-Light.otf'),
+
+}
+
+body {
+    font-family: 'Gotham Narrow', sans-serif;
+
+    background-color: white;
+    margin: 0cm;
+    color: #1d1d1d;
+  }

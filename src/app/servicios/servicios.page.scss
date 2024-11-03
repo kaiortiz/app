@@ -1,0 +1,41 @@
+/* Contenedor del logo */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    animation: slidein 3s linear 1s infinite alternate;
+  }
+  
+  /* Animación del logo */
+  @keyframes slidein {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+ion-card {
+    background-color: white;
+    border-radius: 4px;
+    margin: auto;
+    width: fit-content;
+    }
+
+ion-card-content {
+    background: transparent;
+    color: rgb(78, 78, 78);
+    }
+
+ion-card-header {
+    padding:0%;
+    text-align: center;
+
+}
