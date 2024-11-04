@@ -7,11 +7,7 @@
   align-items: center;
   height: 100%;
   padding: 20px;
-  background-image: url('../../assets/img/moon_bg.png'); /* Ruta de img */
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: fixed; /* Mantiene la imagen fija cuando se desplaza */
+  background-color: white;
 }
 /* Estilos para el logo */
 .logo-container{
@@ -48,3 +44,11 @@
   height: auto;
   border-radius: 8px;
 }
+  
+/* Contenedor del título */
+.title-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+

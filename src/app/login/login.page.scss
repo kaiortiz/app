@@ -6,11 +6,12 @@
     align-items: center;
     height: 100%;
     padding: 20px;
-    background-image: url('../../assets/img/moon_bg.png'); /* Ruta de img */
-    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Mantiene la imagen fija cuando se desplaza */
+    /* Borré la imagen de fondo, pero dejo el código en caso de cambiar de opinión más adelante */
+    /* background-image: url('../../assets/img/moon_bg.png'); /* Ruta de img */
+    /* background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    /* background-position: center; /* Centra la imagen */
+    /* background-repeat: no-repeat; /* Evita que la imagen se repita */
+    /*background-attachment: fixed; /* Mantiene la imagen fija cuando se desplaza */
   }
   
   /* Estilo para el card de login */
@@ -26,9 +27,15 @@
     margin-bottom: 20px;
   }
   
+
   /* Estilo para los botones */
   .login-button, .registrarse-button {
     margin-top: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #fff;
+    --background: #494949; 
+    --background-hover: #363636; 
   }
   
   /* Estilos texto  "Olvidé mi contraseña" */
@@ -83,7 +90,67 @@
     }
 }
 
-    
+/* Estilo para los items */
+ion-item {
+  --background: #f3f3f3; /* Fondo más claro */
+  border-radius: 4px;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 15px;
+  --padding-start: 8px;
+  --inner-padding-end: 0;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el ion-label dentro de los items */
+ion-label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Estilo para los inputs de Angular Material */
+mat-form-field {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333; 
+}
+
+ion-card {
+  background-color: white;
+  border-radius: 4px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+}
+
+ion-card-content {
+  background: transparent;
+  color: rgb(78, 78, 78);
+  justify-content: center;
+  text-justify: auto;
+}
+
+ion-card-header {
+  text-align: center;
+  color: rgb(78, 78, 78);
+  justify-content: center;
+}
+
+ion-card-title {
+  color: rgb(78, 78, 78);
+  justify-content: center;
+  text-justify: auto;
+}
+ion-content { /* Recordatorio para mí que aquí son los cambios que buscaba hacer hace un rato */
+  --background: rgb(243, 243, 243); /* Define el fondo del contenido */
+  text-align: center;
+}
 
     
 

@@ -10,7 +10,12 @@
 
 /* Estilo para los items (ion-item) */
 ion-item {
+    --background: #f3f3f3; /* Fondo más claro */
+    border-radius: 4px;
     --padding-start: 0;
+    --inner-padding-end: 0;
+    margin-bottom: 15px;
+    --padding-start: 8px;
     --inner-padding-end: 0;
     margin-bottom: 15px;
   }
@@ -18,7 +23,7 @@ ion-item {
   /* Estilo para el ion-label dentro de los items */
   ion-label {
     font-weight: 600;
-    color: #333;
+    color: #333333;
   }
   
   /* Estilo para los inputs de Angular Material */
@@ -35,3 +40,40 @@ ion-item {
     --background: #494949; 
     --background-hover: #363636; 
   }
+
+  
+ion-card {
+    background-color: white;
+    border-radius: 4px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  ion-card-content {
+    background: transparent;
+    color: rgb(78, 78, 78);
+    justify-content: center;
+    text-justify: auto;
+  }
+  
+  ion-card-header {
+    text-align: center;
+    color: rgb(78, 78, 78);
+    justify-content: center;
+  }
+  
+  ion-card-title {
+    color: rgb(78, 78, 78);
+    justify-content: center;
+    text-justify: auto;
+  }
+  ion-content { /* Recordatorio para mí que aquí son los cambios que buscaba hacer hace un rato */
+    --background: rgb(243, 243, 243); /* Define el fondo del contenido */
+    text-align: center;
+  }
+  
+      
+  
+  
+    

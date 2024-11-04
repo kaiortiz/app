@@ -1,41 +1,66 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Contenedor del logo */
 .logo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  animation: zoomIn 3s ease-in-out infinite alternate;
+}
+
+/* Animación del logo */
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
   }
-  
-  .logo {
-    width: 120px;
-    height: auto;
-    animation: slidein 3s linear 1s infinite alternate;
+  to {
+    transform: scale(0.8);
   }
-  
-  /* Animación del logo */
-  @keyframes slidein {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333; 
+}
 
 ion-card {
-    background-color: white;
-    border-radius: 4px;
-    margin: auto;
-    width: fit-content;
-    }
+  background-color: white;
+  border-radius: 4px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+}
 
 ion-card-content {
-    background: transparent;
-    color: rgb(78, 78, 78);
-    }
+  background: transparent;
+  color: rgb(78, 78, 78);
+  justify-content: center;
+  text-justify: auto;
+}
 
 ion-card-header {
-    padding:0%;
-    text-align: center;
+  text-align: center;
+  color: rgb(78, 78, 78);
+  justify-content: center;
+}
 
+ion-card-title {
+  color: rgb(78, 78, 78);
+  justify-content: center;
+  text-justify: auto;
+}
+ion-content { /* Recordatorio para mí que aquí son los cambios que buscaba hacer hace un rato */
+  --background: rgb(243, 243, 243); /* Define el fondo del contenido */
+  text-align: center;
 }
