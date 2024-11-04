@@ -1,21 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-
-export class HomePage {
-
+export class HomePage implements OnInit {
 
   email: string = '';
   password: string = '';
-  bienvenidos: string='Bienvenid@';
+  bienvenidos: string = 'Bienvenid@';
 
-  constructor(private route: ActivatedRoute, ) {}
-
+  constructor(private route: ActivatedRoute, private navCtrl: NavController) {}
 
   ngOnInit() { 
     // Obtener los parámetros de la URL
@@ -23,5 +21,13 @@ export class HomePage {
       this.email = params['email'];
       this.password = params['password'];
     });
+  }
+
+  goToPortafolio() {
+    this.navCtrl.navigateForward('/portafolio');
+  }
+
+  goToServicios() {
+    this.navCtrl.navigateForward('/servicios');
   }
 }
