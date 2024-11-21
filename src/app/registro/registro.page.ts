@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, AlertController, NavController } from '@ionic/angular';
+import { AuthServiceService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-registro',
@@ -10,14 +11,16 @@ export class RegistroPage implements OnInit {
 
   nombre: string = '';
   apellido: string = '';
-  selectedDate: string = ''; // o utiliza Date si es una fecha
+  selectedDate: string = ''; 
   email: string = '';
   password: string = '';
+  registroStatus: string = ''; 
 
   constructor(
     private alertController: AlertController,
     private menu: MenuController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private authService: AuthServiceService
   ) {}
 
   ngOnInit() {
@@ -30,31 +33,32 @@ export class RegistroPage implements OnInit {
       message: message,
       buttons: ['OK']
     });
-
     await alert.present();
   }
 
-  guardar() {
+  async guardar() {
     if (
       this.nombre.trim() === '' ||
       this.apellido.trim() === '' ||
-      (typeof this.selectedDate === 'string' && this.selectedDate.trim() === '') ||
+      this.selectedDate.trim() === '' ||
       this.email.trim() === '' ||
       this.password.trim() === ''
     ) {
       this.presentAlert('Rellene todos los datos solicitados');
     } else {
-      this.presentAlert(
-        `Registrado correctamente. ¡Te damos la bienvenida, ${this.nombre} ${this.apellido}!`
-      );
-
-      // Navegar a la página de inicio con parámetros
-      this.navCtrl.navigateForward(['/home'], {
-        queryParams: {
-          email: this.email,
-          password: this.password
-        }
-      });
+      this.register()
     }
+  }
+
+  async register() {
+    const success = await this.authService.registerUser(
+      this.nombre,
+      this.apellido,
+      new Date(this.selectedDate), // Convierte de string a date 
+      this.email,
+      this.password
+    );
+    this.registroStatus = success ? 'Registro exitoso' : 'Error al registrar';
+    this.presentAlert(this.registroStatus);
   }
 }

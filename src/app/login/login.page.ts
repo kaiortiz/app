@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { AuthServiceService } from '../services/auth-service.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,12 +13,12 @@ export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private navCtrl: NavController, private alertController: AlertController) { }
+  constructor(private navCtrl: NavController, private alertController: AlertController, private authService: AuthServiceService ) { }
 
   ngOnInit() {
   }
 
-  // Alerta de error | Método
+  // Alerta de error 
   async mostrarAlerta(mensaje: string) {
     const alert = await this.alertController.create({
       header: 'Error',
@@ -33,7 +35,7 @@ export class LoginPage implements OnInit {
   }
 
   // Verificación campo correo no esté vacío
-  login() {
+  async login() {
     if (!this.email) {
       this.mostrarAlerta('Ingrese su correo');
       return;
@@ -56,7 +58,7 @@ export class LoginPage implements OnInit {
       this.mostrarAlerta('La contraseña debe tener 4 dígitos');
       return;
     }
-
+    /*
     // Si pasa todas las validaciones, se dirige a home
     this.navCtrl.navigateForward(['/home'], {
       queryParams: {
@@ -67,5 +69,26 @@ export class LoginPage implements OnInit {
   }
   registro() { 
     this.navCtrl.navigateForward(['/registro']);
+  } */
+
+    // Validar credenciales con el servicio de autenticación
+  const isAuthenticated = await this.authService.loginUser(this.email, this.password);
+  if (isAuthenticated) {
+    // Si la autenticación es correcta, navega a la página "home"
+
+     // Guardar el nombre del usuario en Local Storage
+     localStorage.setItem('username', this.email );
+
+    this.navCtrl.navigateForward(['/home'], {
+      queryParams: {
+        email: this.email
+      }
+    });
+  } else {
+    // Muestra alerta si las credenciales son incorrectas
+    this.mostrarAlerta('Correo o contraseña incorrectos.');
   }
 }
+
+} 
+

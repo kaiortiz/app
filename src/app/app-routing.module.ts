@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NotFoundGuard } from './files/not-found.guard';
 
 const routes: Routes = [
   {
@@ -28,6 +29,16 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
+  // Comodín para rutas no válidas
+  {
+    path: '**',
+    redirectTo: 'error',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
