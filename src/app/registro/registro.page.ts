@@ -11,7 +11,7 @@ export class RegistroPage implements OnInit {
 
   nombre: string = '';
   apellido: string = '';
-  selectedDate: string = ''; 
+  selectedDate: any = ''; 
   email: string = '';
   password: string = '';
   registroStatus: string = ''; 
@@ -40,7 +40,7 @@ export class RegistroPage implements OnInit {
     if (
       this.nombre.trim() === '' ||
       this.apellido.trim() === '' ||
-      this.selectedDate.trim() === '' ||
+      String(this.selectedDate).trim() === '' ||
       this.email.trim() === '' ||
       this.password.trim() === ''
     ) {
@@ -54,11 +54,16 @@ export class RegistroPage implements OnInit {
     const success = await this.authService.registerUser(
       this.nombre,
       this.apellido,
-      new Date(this.selectedDate), // Convierte de string a date 
+      this.selectedDate, 
       this.email,
       this.password
     );
     this.registroStatus = success ? 'Registro exitoso' : 'Error al registrar';
     this.presentAlert(this.registroStatus);
+
+    if (success) {
+      // Redirigir a la página de login si el registro fue exitoso
+      this.navCtrl.navigateForward('/login');
+    }
   }
 }
