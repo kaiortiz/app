@@ -24,7 +24,8 @@ export class RegistroPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.menu.close("mainMenu");
+    // Cerrar menú
+    this.menu.close("mainMenu"); 
   }
 
   async presentAlert(message: string) {

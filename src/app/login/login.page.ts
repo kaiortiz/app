@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { AuthServiceService } from '../services/auth-service.service';
+import { MenuController } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-login',
@@ -15,10 +16,14 @@ export class LoginPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private alertController: AlertController,
-    private authService: AuthServiceService
+    private authService: AuthServiceService,
+    private menu: MenuController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+        // Cerrar menú
+        this.menu.close("mainMenu"); 
+  }
 
   // Alerta de error
   async mostrarAlerta(mensaje: string) {

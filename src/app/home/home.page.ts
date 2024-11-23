@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { MenuController } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,11 @@ export class HomePage implements OnInit {
   password: string = '';
   bienvenidos: string = 'Bienvenid@';
 
-  constructor(private route: ActivatedRoute, private navCtrl: NavController) {}
+  constructor(private route: ActivatedRoute, private navCtrl: NavController, private menu: MenuController) {}
 
   ngOnInit() { 
+    // Cerrar menú
+    this.menu.close("mainMenu"); 
     // Obtener los parámetros de la URL
     this.route.queryParams.subscribe(params => {
       this.email = params['email'];
