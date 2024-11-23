@@ -28,7 +28,20 @@ export class ClientesPage implements OnInit {
       }
     );
   }
-  // Método para mostrar alerta ****
+  agregarUsuario() {
+    this.miapiService.addUser(this.nuevoUsuario).subscribe(
+      (response) => {
+        this.mostrarAlerta('Usuario agregado:'+ response); 
+        this.users.push(response); // Agregar el nuevo usuario a la lista
+        this.nuevoUsuario = { name: '', email: '' }; // Limpiar el formulario
+      },
+      (error) => {
+        this.mostrarAlerta(error);
+        //console.error('Error al agregar el usuario:', error);
+      }
+    );
+  }
+  // Método para mostrar alerta 
   async mostrarAlerta(mensaje:any) {
     const alert = await this.alertController.create({
       header: 'Mensaje',
