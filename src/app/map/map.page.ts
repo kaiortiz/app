@@ -12,9 +12,9 @@ export class MapPage implements OnInit {
   constructor(private menu: MenuController) { }
 
      // Coordenadas personalizadas
-    latitude: number = -33.4330583; // Latitud de Duoc UC: Antonio Varas
-    longitude: number = -70.6154230440881; // Longitud de Duoc UC: Antonio Varas
-
+    latitude: number = -33.42138692400215; // Latitud y longitud aleatorios escogidas en el mapa
+    longitude: number = -70.60966995281073;
+   
   ngOnInit() {
     this.menu.close("mainMenu");
     //this.getLocationAndShowOnMap()

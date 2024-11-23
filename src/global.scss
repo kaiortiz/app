@@ -52,13 +52,22 @@ ion-header {
 }
 
 ion-header, 
-ion-toolbar {
-    color:#ffffff;
+ion-toolbar,
+ion-buttons,
+app-company-name {
+    color:#1d1d1d;
 }
+
+
 body {
     font-family: 'Gotham Narrow', sans-serif;
     background-color: rgb(243, 243, 243);
     margin: 0cm;
     color: #1d1d1d;
   }
+
+.header-md{
+    -webkit-box-shadow: none !important; /* Elimina la sombra */
+    box-shadow: none !important; /* Elimina la sombra */
+}
 

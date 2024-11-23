@@ -16,9 +16,11 @@
   }
   
   .logo {
-    width: 120px;
+    width: 60px;
     height: auto;
     animation: zoomIn 3s ease-in-out infinite alternate;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
   }
   
   /* Animación del logo */
@@ -40,7 +42,7 @@
 
 /* Contenedor de imágenes estilo masonry */
 .images-container {
-    column-count: 2; /* Número de columnas en el diseño masonry */
+    column-count: 2; /* Número de columnas */
     column-gap: 5px; /* Espacio entre columnas */
     width: 100%;
     row-gap: 5px;
